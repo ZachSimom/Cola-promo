@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>קולה קולה - טעם החיים</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>קולה קלאסית</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Varela Round', sans-serif;
-      background: linear-gradient(to bottom, #f0f0f0, #e4e4e4);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      direction: rtl;
     }
 
     .container {
-      background: white;
-      width: 80%;
-      max-width: 1000px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      border-radius: 20px;
-      overflow: hidden;
       display: flex;
-      direction: rtl;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to left, #ffffff, #e0e0e0);
+      padding: 40px;
     }
 
     .text-section {
       flex: 1;
-      padding: 40px;
-      background-color: #fff;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      max-width: 500px;
+      padding: 20px;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .text-section h1 {
-      font-size: 2.5em;
-      color: #b30000;
-      margin-bottom: 20px;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #cc0000;
     }
 
     .text-section ul {
@@ -46,35 +40,33 @@
       padding: 0;
     }
 
-    .text-section li {
-      margin-bottom: 12px;
-      font-size: 1.2em;
+    .text-section ul li {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      padding-right: 10px;
       position: relative;
-      padding-right: 20px;
     }
 
-    .text-section li::before {
-      content: "✔";
-      color: #b30000;
+    .text-section ul li::before {
+      content: "✓";
       position: absolute;
-      right: 0;
+      right: -25px;
+      color: #cc0000;
+      font-weight: bold;
     }
 
     .image-section {
       flex: 1;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
+      max-width: 400px;
+      text-align: center;
+      animation: slideIn 1.2s ease-in-out;
     }
 
     .image-section img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-      transition: transform 0.4s ease;
+      width: 100%;
+      max-width: 300px;
+      filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
+      transition: transform 0.3s ease;
     }
 
     .image-section img:hover {
@@ -82,35 +74,52 @@
     }
 
     .credit {
+      width: 100%;
       text-align: center;
-      font-size: 0.9em;
-      color: #777;
-      margin-top: 20px;
-      direction: ltr;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: #f9f9f9;
+      color: #888;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column-reverse;
+      }
+      .text-section, .image-section {
+        max-width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-
   <div class="container">
     <div class="text-section">
-      <h1>קולה קולה - פחית של רעננות</h1>
+      <h1>קולה קלאסית</h1>
       <ul>
-        <li>טעם קלאסי בלתי נשכח</li>
-        <li>מתאים לכל רגע של צמא</li>
-        <li>עיצוב מודרני ונוח לנשיאה</li>
-        <li>מושלם למסיבות, טיולים ומנוחה</li>
-        <li>מגיע תמיד צונן ומרענן</li>
+        <li>טעם בלתי נשכח ומרענן</li>
+        <li>מושלם לכל ארוחה</li>
+        <li>מעניק בוסט של אנרגיה</li>
+        <li>מוגש תמיד קר וטעים</li>
+        <li>מותג עם היסטוריה מנצחת</li>
       </ul>
     </div>
     <div class="image-section">
-      <img src="https://cdn.pixabay.com/photo/2017/09/04/18/32/coca-cola-2710450_1280.jpg" alt="פחית קולה קולה">
+      <img src="https://www.coca-cola.com/content/dam/onexp/il/en/homepage/images/1-cola.png" alt="פחית קולה" />
     </div>
   </div>
 
-  <div class="credit">
-    נוצר בגאווה על ידי <strong>הסיימונולושן | פתרונות דיגיטליים מבית סיימון</strong>
-  </div>
-
+  <div class="credit">האתר והעיצוב נוצרו על ידי הסיימונולושן | פתרונות דיגיטליים</div>
 </body>
 </html>
